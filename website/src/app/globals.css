@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* TODO: Add Helvetica Now Var files to public/fonts/ and uncomment @font-face */
+/*
+@font-face {
+  font-family: "Helvetica Now Var";
+  src: url("/fonts/HelveticaNowVar.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+:root {
+  --bg: #0b0b0c;
+  --text: #f7f7f7;
+  --accent: #f2d200;
+  --surface: #151518;
+  --border: #232329;
+  --muted: rgba(247, 247, 247, 0.65);
+  --font-sans: "Helvetica Now Var", Helvetica, Arial, system-ui, -apple-system,
+    sans-serif;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+@media (pointer: fine) and (min-width: 1024px) {
+  html.has-custom-cursor,
+  html.has-custom-cursor *,
+  html.has-custom-cursor *::before,
+  html.has-custom-cursor *::after {
+    cursor: none !important;
+  }
+}
+
+@media (pointer: coarse), (max-width: 1023px) {
+  body {
+    cursor: auto;
+  }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--text);
+}
+
+.cut-corner {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+}
+
+.cut-frame {
+  position: relative;
+}
+
+.cut-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+  pointer-events: none;
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.underline-reveal {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.35s ease;
+}
+
+.group:hover .underline-reveal,
+a:focus-visible .underline-reveal {
+  background-size: 100% 2px;
+}
+
+.passing-hero-track {
+  animation: passing-hero 70s linear infinite;
+}
+
+@keyframes passing-hero {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .passing-hero-track {
+    animation: none;
+  }
+}
+
+.header-pill-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0;
+  border: 1px solid color-mix(in srgb, var(--text) 14%, transparent);
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  backdrop-filter: blur(16px);
+  padding: 0.25rem 0.25rem;
+  gap: 0;
+}
+
+.header-cta-pill {
+  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--bg) 35%, transparent);
+}
+
+.featured-carousel {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  touch-action: pan-x pinch-zoom;
+}
+
+.featured-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.featured-carousel.is-dragging {
+  scroll-behavior: auto;
+  cursor: grabbing;
+}
+
+.featured-carousel.is-dragging a {
+  pointer-events: none;
+}

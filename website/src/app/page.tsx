@@ -56,8 +56,8 @@ export default function HomePage() {
       </section>
 
       {/* ── 6. FINAL CTA ── */}
-      <section className="pt-6 pb-28">
-        <div className="mx-auto max-w-7xl pl-24 pr-6 lg:pl-40 lg:pr-10">
+      <section className="pt-6 pb-20 sm:pb-28">
+        <div className="mx-auto max-w-7xl px-6 lg:pl-40 lg:pr-10">
           <CTASection />
         </div>
       </section>

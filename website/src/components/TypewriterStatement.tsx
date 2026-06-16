@@ -110,7 +110,7 @@ export function TypewriterStatement() {
   return (
     <div
       ref={containerRef}
-      className="mx-auto grid max-w-7xl grid-cols-1 gap-0 py-20 pl-0 pr-6 lg:grid-cols-2 lg:pl-0 lg:pr-10 lg:py-28"
+      className="mx-auto grid max-w-7xl grid-cols-1 gap-0 px-6 py-16 sm:py-20 lg:grid-cols-2 lg:px-10 lg:py-28"
     >
       {/* LEFT — stacked taglines */}
       <div className="flex flex-col justify-center border-b border-white/8 pb-12 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-10">
@@ -120,7 +120,7 @@ export function TypewriterStatement() {
               return (
                 <div
                   key={i}
-                  className="whitespace-nowrap text-[clamp(1.8rem,3.8vw,4.2rem)] font-semibold leading-[1.1] tracking-tight text-text"
+                  className="text-[clamp(1.5rem,3.8vw,4.2rem)] font-semibold leading-[1.12] tracking-tight text-text"
                 >
                   {line}
                 </div>
@@ -130,7 +130,7 @@ export function TypewriterStatement() {
               return (
                 <div
                   key={i}
-                  className="whitespace-nowrap text-[clamp(1.8rem,3.8vw,4.2rem)] font-semibold leading-[1.1] tracking-tight text-text"
+                  className="text-[clamp(1.5rem,3.8vw,4.2rem)] font-semibold leading-[1.12] tracking-tight text-text"
                 >
                   {line.slice(0, taglineChar)}
                   {phase === "taglines" && (
@@ -153,7 +153,7 @@ export function TypewriterStatement() {
             alt="T0L LLC"
             width={420}
             height={126}
-            className="h-42 w-auto opacity-95 md:h-54"
+            className="h-auto w-full max-w-[280px] opacity-95 sm:max-w-[340px] md:max-w-[420px]"
           />
         </div>
 

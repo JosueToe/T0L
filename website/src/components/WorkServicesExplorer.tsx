@@ -86,9 +86,9 @@ export function WorkServicesExplorer() {
             our portfolio.
           </p>
 
-          {/* Service tabs — always side-by-side in a 3-column grid */}
+          {/* Service tabs — stack on very small screens, 3 columns from 480px+ */}
           <div
-            className="mt-8 grid grid-cols-3 gap-3"
+            className="mt-8 grid grid-cols-1 gap-2 min-[480px]:grid-cols-3 min-[480px]:gap-3"
             role="tablist"
             aria-label="Services"
           >
@@ -100,13 +100,16 @@ export function WorkServicesExplorer() {
                 aria-selected={activeId === service.id}
                 data-cursor="link"
                 onClick={() => handleTabChange(service.id)}
-                className={`cut-corner px-4 py-3 text-xs tracking-[0.1em] uppercase transition text-center ${
+                className={`cut-corner px-3 py-3 text-[11px] tracking-[0.08em] uppercase transition text-center min-[480px]:px-4 min-[480px]:text-xs min-[480px]:tracking-[0.1em] ${
                   activeId === service.id
                     ? "bg-accent font-semibold text-bg"
                     : "border border-white/15 text-text/70 hover:border-accent/40"
                 }`}
               >
-                {service.title}
+                <span className="min-[480px]:hidden">
+                  {service.shortTitle ?? service.title}
+                </span>
+                <span className="hidden min-[480px]:inline">{service.title}</span>
               </button>
             ))}
           </div>

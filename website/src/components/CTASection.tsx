@@ -50,8 +50,8 @@ export function CTASection() {
   return (
     <div ref={ref} className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:items-start">
       {/* Heading with typewriter — two lines */}
-      <h2 className="-ml-4 text-[clamp(1.8rem,3.8vw,4rem)] font-semibold leading-[1.1] tracking-tight">
-        <span className="block whitespace-nowrap">
+      <h2 className="text-[clamp(1.5rem,3.8vw,4rem)] font-semibold leading-[1.12] tracking-tight">
+        <span className="block">
           {visLine1}
           {typingLine1 && !done && (
             <span className="animate-[blink_0.75s_step-end_infinite] text-accent">▌</span>
@@ -66,8 +66,8 @@ export function CTASection() {
       </h2>
 
       {/* Logo + button — center */}
-      <div className="flex flex-col items-center pl-6 lg:pl-10">
-        <div className="relative mb-6 h-36 w-36">
+      <div className="flex flex-col items-center lg:pl-10">
+        <div className="relative mb-6 h-28 w-28 sm:h-36 sm:w-36">
           <Image
             src="/brand/cursor.png"
             alt=""
@@ -79,14 +79,14 @@ export function CTASection() {
         <a
           href="/about#contact"
           data-cursor="link"
-          className="cut-corner inline-block bg-accent px-10 py-4 text-lg font-semibold tracking-wide text-bg transition hover:brightness-110"
+          className="cut-corner inline-block bg-accent px-8 py-3.5 text-base font-semibold tracking-wide text-bg transition hover:brightness-110 sm:px-10 sm:py-4 sm:text-lg"
         >
           Get a Quote
         </a>
       </div>
 
       {/* Contact info — right */}
-      <div className="space-y-4 pl-6 lg:pb-2 lg:pl-10">
+      <div className="space-y-4 lg:pb-2 lg:pl-10">
         <div>
           <p className="mb-3 text-xs tracking-[0.2em] uppercase text-text/40">
             Navigate

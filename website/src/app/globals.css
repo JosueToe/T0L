@@ -34,6 +34,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -48,7 +53,7 @@ body {
   font-family: var(--font-sans);
 }
 
-@media (pointer: fine) and (min-width: 1024px) {
+@media (hover: hover) and (pointer: fine) {
   html.has-custom-cursor,
   html.has-custom-cursor *,
   html.has-custom-cursor *::before,
@@ -57,15 +62,17 @@ body {
   }
 }
 
-@media (pointer: coarse), (max-width: 1023px) {
-  body {
-    cursor: auto;
-  }
-}
-
 ::selection {
   background: color-mix(in srgb, var(--accent) 35%, transparent);
   color: var(--text);
+}
+
+img,
+video,
+picture {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .cut-corner {

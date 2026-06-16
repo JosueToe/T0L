@@ -19,7 +19,7 @@ export function HeroSlider() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[calc(100vh-6rem)] min-h-[600px] w-full overflow-hidden bg-[#0d0d0d]"
+      className="relative h-[calc(100dvh-5rem)] min-h-[480px] w-full overflow-hidden bg-[#0d0d0d] sm:min-h-[560px] lg:min-h-[600px]"
       aria-label="Hero"
     >
       <ParallaxStripes scrollYProgress={scrollYProgress} />
@@ -45,7 +45,7 @@ export function HeroSlider() {
               ))}
             </span>
             <motion.span
-              className="block whitespace-nowrap"
+              className="block sm:whitespace-nowrap"
               style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,1)" }}
               initial={{ opacity: 0, y: 50, rotateX: -40 }}
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -66,9 +66,9 @@ export function HeroSlider() {
             <div className="h-[2px] w-3/4 bg-text/30" />
           </motion.div>
 
-          <div className="mt-5 flex items-start gap-4 lg:gap-6">
+          <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-4 lg:gap-6">
             <motion.div
-              className="shrink-0"
+              className="shrink-0 self-start"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.95 }}
@@ -78,14 +78,14 @@ export function HeroSlider() {
                 alt=""
                 width={120}
                 height={120}
-                className="h-28 w-auto lg:h-36"
+                className="h-20 w-auto sm:h-28 lg:h-36"
                 aria-hidden
               />
             </motion.div>
 
             <div>
               <motion.p
-                className="max-w-lg text-lg font-medium leading-relaxed text-text md:text-xl"
+                className="max-w-lg text-base font-medium leading-relaxed text-text sm:text-lg md:text-xl"
                 style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -97,7 +97,7 @@ export function HeroSlider() {
               </motion.p>
 
               <motion.div
-                className="mt-7 flex flex-wrap gap-4"
+                className="mt-6 flex flex-wrap gap-3 sm:mt-7 sm:gap-4"
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 1.15 }}
@@ -105,14 +105,14 @@ export function HeroSlider() {
                 <Link
                   href="/about#contact"
                   data-cursor="link"
-                  className="cut-corner inline-block bg-accent px-8 py-4 text-base font-semibold tracking-wide text-bg transition hover:brightness-110"
+                  className="cut-corner inline-block bg-accent px-6 py-3.5 text-sm font-semibold tracking-wide text-bg transition hover:brightness-110 sm:px-8 sm:py-4 sm:text-base"
                 >
                   Schedule a Call
                 </Link>
                 <Link
                   href="/work"
                   data-cursor="link"
-                  className="cut-corner inline-block border border-white/30 px-8 py-4 text-base font-medium tracking-wide text-text backdrop-blur-sm transition hover:border-accent/60 hover:text-accent"
+                  className="cut-corner inline-block border border-white/30 px-6 py-3.5 text-sm font-medium tracking-wide text-text backdrop-blur-sm transition hover:border-accent/60 hover:text-accent sm:px-8 sm:py-4 sm:text-base"
                 >
                   Explore Services
                 </Link>

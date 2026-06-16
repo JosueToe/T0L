@@ -3,30 +3,29 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, useSpring } from "framer-motion";
+import { useFinePointer } from "@/lib/pointer";
 import { usePrefersReducedMotion } from "@/lib/motion";
 
 export function CustomCursor() {
   const reducedMotion = usePrefersReducedMotion();
+  const finePointer = useFinePointer();
   const [visible, setVisible] = useState(false);
-  const [touchDevice, setTouchDevice] = useState(true);
 
   const x = useSpring(0, { stiffness: reducedMotion ? 1000 : 280, damping: 28 });
   const y = useSpring(0, { stiffness: reducedMotion ? 1000 : 280, damping: 28 });
 
   useEffect(() => {
-    const coarse = window.matchMedia("(pointer: coarse)").matches;
-    const narrow = window.innerWidth < 1024;
-    const disabled = coarse || narrow;
-    setTouchDevice(disabled);
-
-    if (disabled) return;
+    if (!finePointer) {
+      document.documentElement.classList.remove("has-custom-cursor");
+      return;
+    }
 
     document.documentElement.classList.add("has-custom-cursor");
 
     const move = (e: MouseEvent) => {
       x.set(e.clientX);
       y.set(e.clientY);
-      if (!visible) setVisible(true);
+      setVisible(true);
     };
 
     const hide = () => setVisible(false);
@@ -42,9 +41,9 @@ export function CustomCursor() {
       window.removeEventListener("mouseleave", hide);
       window.removeEventListener("mouseenter", show);
     };
-  }, [visible, x, y]);
+  }, [finePointer, x, y]);
 
-  if (touchDevice) return null;
+  if (!finePointer) return null;
 
   return (
     <motion.div

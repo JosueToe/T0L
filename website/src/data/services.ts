@@ -3,6 +3,7 @@ import type { ProjectCategory } from "./projects";
 export interface Service {
   id: string;
   title: string;
+  shortTitle?: string;
   summary: string;
   outcomes: string[];
   projectCategories?: ProjectCategory[];
@@ -29,6 +30,7 @@ export const services: Service[] = [
   {
     id: "software-mobile",
     title: "Software & Mobile Development",
+    shortTitle: "Software & Apps",
     projectCategories: ["Software", "Apps"],
     summary:
       "Custom software, internal tools, integrations, and mobile apps for iOS and Android, built for how your teams and customers actually work.",
@@ -42,6 +44,7 @@ export const services: Service[] = [
   {
     id: "it-support",
     title: "IT Support & Services",
+    shortTitle: "IT Support",
     summary:
       "On-site and remote IT support across Miami and South Florida for homes, businesses, and everything in between. Device setup, network design, security hardening, virus removal, and ongoing maintenance. We handle it all at $100/hr with no retainer required. Serving Miami-Dade, Broward, and Palm Beach County.",
     outcomes: [

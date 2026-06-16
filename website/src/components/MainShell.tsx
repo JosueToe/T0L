@@ -7,6 +7,6 @@ export function MainShell({ children }: { children: React.ReactNode }) {
   const isHome = pathname === "/";
 
   return (
-    <main className="flex-1 pt-24">{children}</main>
+    <main className="flex-1 pt-20 sm:pt-24">{children}</main>
   );
 }

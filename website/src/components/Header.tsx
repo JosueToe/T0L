@@ -35,9 +35,9 @@ export function Header() {
   return (
     <>
       <header
-        className="fixed top-0 right-0 left-0 z-50 border-b border-white/10 bg-bg/55 backdrop-blur-md transition-colors duration-300"
+        className="fixed top-0 right-0 left-0 z-50 overflow-visible border-b border-white/10 bg-bg/55 backdrop-blur-md transition-colors duration-300"
       >
-        <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-5 lg:px-10">
+        <div className="relative mx-auto flex max-w-7xl min-w-0 items-center justify-between gap-2 px-4 py-4 sm:gap-4 sm:px-6 sm:py-5 lg:px-10">
           {/* Logo */}
           <Link
             href="/"
@@ -49,7 +49,7 @@ export function Header() {
               alt="T0L LLC"
               width={140}
               height={42}
-              className="h-8 w-auto md:h-9"
+              className="h-7 w-auto max-w-[7rem] sm:h-8 sm:max-w-none md:h-9"
               priority
             />
           </Link>
@@ -79,13 +79,14 @@ export function Header() {
           </nav>
 
           {/* CTA + mobile toggle */}
-          <div className="relative z-[60] flex shrink-0 items-center gap-3">
+          <div className="relative z-[60] flex shrink-0 items-center gap-2 sm:gap-3">
             <Link
               href="/about#contact"
               data-cursor="link"
-              className="header-cta-pill hidden border border-white/25 px-5 py-2.5 text-sm font-medium text-text transition hover:border-accent hover:text-accent sm:inline-flex"
+              className="cut-corner bg-accent px-3 py-2 text-[11px] font-semibold tracking-wide text-bg transition hover:brightness-110 sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              Contact us
+              <span className="sm:hidden">Contact</span>
+              <span className="hidden sm:inline">Contact us</span>
             </Link>
 
             <button
@@ -137,7 +138,7 @@ export function Header() {
               <Link
                 href="/about#contact"
                 data-cursor="link"
-                className="mt-8 inline-flex w-fit bg-accent px-6 py-3 text-sm font-semibold text-bg"
+                className="cut-corner mt-8 inline-flex w-fit bg-accent px-6 py-3 text-sm font-semibold tracking-wide text-bg transition hover:brightness-110"
                 onClick={() => setOpen(false)}
               >
                 Contact us

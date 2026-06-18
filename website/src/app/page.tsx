@@ -8,7 +8,7 @@ import { Reveal } from "@/components/Reveal";
 import { defaultDescription, seoKeywords } from "@/data/seo";
 
 export const metadata: Metadata = {
-  title: "IT Support, Web Development & Software Development | Miami, South Florida & USA",
+  title: { absolute: "TOL Tech" },
   description: defaultDescription,
   keywords: seoKeywords,
   alternates: { canonical: "/" },

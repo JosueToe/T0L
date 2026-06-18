@@ -56,8 +56,7 @@ export const seoKeywords = [
   "T0L LLC Miami",
 ];
 
-export const defaultTitle =
-  "T0L LLC | IT Support, Web Development & Software Development | Miami & South Florida";
+export const defaultTitle = "TOL Tech";
 
 export const defaultDescription =
   "T0L LLC provides IT support, web development, and custom software development in Miami, South Florida, and across the United States. On-site IT from $100/hr in Miami-Dade, Broward, and Palm Beach. Web design and hosting from $120/year. Custom software and mobile apps nationwide.";

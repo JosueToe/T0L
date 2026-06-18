@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: defaultTitle,
-    template: `%s | ${siteConfig.name}`,
+    template: "%s | TOL Tech",
   },
   description: defaultDescription,
   keywords: seoKeywords,

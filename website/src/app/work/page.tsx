@@ -3,8 +3,7 @@ import { WorkServicesExplorer } from "@/components/WorkServicesExplorer";
 import { seoKeywords } from "@/data/seo";
 
 export const metadata: Metadata = {
-  title:
-    "Work & Services | IT Support Miami, Web Development & Software Development South Florida",
+  title: "Work",
   description:
     "Browse T0L LLC services: IT support in Miami from $100/hr, web design and hosting from $120/year, and custom software and mobile app development for Miami, South Florida, and businesses across the United States.",
   keywords: [

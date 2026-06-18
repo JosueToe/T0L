@@ -3,7 +3,7 @@ import { AboutIntroSection } from "@/components/AboutIntroSection";
 import { AboutContactSection } from "@/components/AboutContactSection";
 
 export const metadata: Metadata = {
-  title: "About & Contact | IT & Software Development Partner in Miami, South Florida",
+  title: "About",
   description:
     "About T0L LLC: Miami-based IT support, web development, and software development partner serving South Florida and clients across the United States. Contact us for a quote.",
   keywords: [

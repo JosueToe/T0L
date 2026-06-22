@@ -3,7 +3,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import Lenis from "lenis";
 import { usePrefersReducedMotion } from "@/lib/motion";
-import { CustomCursor } from "@/components/CustomCursor";
 import { ImageProtection } from "@/components/ImageProtection";
 import { PageTransition } from "@/components/PageTransition";
 import { ScrollReset } from "@/components/ScrollReset";
@@ -58,7 +57,6 @@ export function SiteProviders({ children }: { children: ReactNode }) {
     <LenisContext.Provider value={lenis}>
       <ScrollReset />
       <ImageProtection />
-      <CustomCursor />
       <PageTransition>{children}</PageTransition>
     </LenisContext.Provider>
   );

@@ -53,15 +53,6 @@ body {
   font-family: var(--font-sans);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  html.has-custom-cursor,
-  html.has-custom-cursor *,
-  html.has-custom-cursor *::before,
-  html.has-custom-cursor *::after {
-    cursor: none !important;
-  }
-}
-
 ::selection {
   background: color-mix(in srgb, var(--accent) 35%, transparent);
   color: var(--text);
